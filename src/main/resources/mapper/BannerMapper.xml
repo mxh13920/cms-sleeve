@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="io.github.talelin.latticy.mapper.BannerMapper">
+
+    <resultMap id="BaseResultMap" type="io.github.talelin.latticy.model.BannerDO">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="description" jdbcType="VARCHAR" property="description"/>
+        <result column="img" jdbcType="VARCHAR" property="img"/>
+        <result column="title" jdbcType="VARCHAR" property="title"/>
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime"/>
+        <result column="delete_time" jdbcType="TIMESTAMP" property="deleteTime"/>
+    </resultMap>
+
+    <select id="getAllBanners" resultMap="BaseResultMap">
+       SELECT *
+       FROM  banner;
+    </select>
+
+    <insert id="insertBanner" useGeneratedKeys="true" keyProperty="id" parameterType="io.github.talelin.latticy.model.BannerDO">
+        INSERT INTO  banner(name ,title)
+        VALUE (#{name},#{title})
+    </insert>
+
+</mapper>
