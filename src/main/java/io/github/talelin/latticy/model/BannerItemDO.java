@@ -10,13 +10,15 @@ import java.util.Date;
 
 @Getter
 @Setter
-@TableName("banner")
-public class BannerDO {
-    private long id;
-    private String name;
-    private String description;
-    private String title;
+@TableName("banner_item")
+public class BannerItemDO {
+
+    private Long id;
     private String img;
+    private String keyword;
+    private Integer type;
+    private Long bannerId;
+    private String name;
 
     @JsonIgnore
     private Date createTime;
