@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="io.github.talelin.latticy.mapper.SpuKeyMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="io.github.talelin.latticy.model.SpuKeyDO">
+        <id column="id" property="id"/>
+        <result column="spu_id" property="spuId"/>
+        <result column="spec_key_id" property="specKeyId"/>
+    </resultMap>
+
+    <select id="getBySpuId" resultType="io.github.talelin.latticy.model.SpecKeyDO">
+        select sk2.*
+        from spu_key sk
+                 join spec_key sk2 on sk.spec_key_id = sk2.id
+        where sk.spu_id = #{id}
+    </select>
+
+</mapper>

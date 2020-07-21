@@ -4,6 +4,7 @@ import io.github.talelin.latticy.mapper.BannerMapper;
 import io.github.talelin.latticy.model.BannerDO;
 import io.github.talelin.latticy.service.TestSleeveService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -12,6 +13,7 @@ import java.util.List;
 
 @RequestMapping("/v1/test")
 @RestController
+@Validated
 public class TestController {
 
     @Autowired

@@ -22,14 +22,7 @@ import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 </#if>
 
-/**
-<#if table.comment != "">
- * ${table.comment!}
- *
-</#if>
- * @author ${author}
- * @since ${date}
- */
+
 <#if entityLombokModel>
 @Data
     <#if superEntityClass??>
